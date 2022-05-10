@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+
+<title>Hello AttractionController!</title>
+
+{% block body %}
+    {% if attractions is empty %}
+        <h2>No Attraction founded 404</h2>
+    {% else %}
+        <ul>
+            {% for attraction in attractions %}
+                <li>{{ attraction.name }} ({{ attraction.score }})</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+{% endblock %}

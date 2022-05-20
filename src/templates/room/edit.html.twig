@@ -8,11 +8,15 @@
         crossorigin="anonymous"></script>
 
 {% block body %}
+    <div class="bg-dark text-white p-2">
+        {{ knp_menu_render('main') }}
+    </div>
     <h3 class="ms-5 mt-3"> Edit Room:</h3>
     <div class="m-5 p-5 container">
         <form method="post" class="mt-4">
             <label for="1" class="h5"> Number Of Beds:</label>
-            <input id="1" type="number" name="num_of_bed" class="form-control" value="{{ room.numOfBeds }}" required=required>
+            <input id="1" type="number" name="num_of_bed" class="form-control" value="{{ room.numOfBeds }}"
+                   required=required>
             <br>
             <label class="h5" for="2">Is Empty:</label>
             <input id="2" type="checkbox" name="is_empty">

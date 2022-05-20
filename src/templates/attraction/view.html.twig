@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 
 <title>Hello AttractionController!</title>
-
-{% block body %}
+{% block body  %}
+    <div class="bg-dark text-white p-2">
+        {{ knp_menu_render('main') }}
+    </div>
     <ul>
         <li>name : {{ atr.name }}</li>
         <li>short description : {{ atr.shortDescription }}</li>

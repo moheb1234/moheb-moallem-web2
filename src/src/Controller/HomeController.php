@@ -7,7 +7,7 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class HomeController
 {
-    #[Route('/')]
+    #[Route('/', name: 'app_home')]
     public function index(): Response
     {
         return new Response(<<<EOF

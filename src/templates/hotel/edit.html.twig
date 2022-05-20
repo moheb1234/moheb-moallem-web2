@@ -8,16 +8,20 @@
         crossorigin="anonymous"></script>
 
 {% block body %}
+    <div class="bg-dark text-white p-2">
+        {{ knp_menu_render('main') }}
+    </div>
     <h2 class="m-3">Edit Hotel:</h2>
-    <form method="post" class="container p-5" >
+    <form method="post" class="container p-5">
         <div class="mb-3">
             <label for="1" class="form-label h5"> Hotel Name:</label>
-            <input id="1" type="text" name="name" class="form-control" value="{{ hotel.name}}" required=required>
+            <input id="1" type="text" name="name" class="form-control" value="{{ hotel.name }}" required=required>
         </div>
         <br>
         <div class="mb-3">
             <label for="2" class="form-label h5"> Number Of Stars:</label>
-            <input id="2" type="number" name="num" class="form-control" value="{{ hotel.numOfStars}}" required=required>
+            <input id="2" type="number" name="num" class="form-control" value="{{ hotel.numOfStars }}"
+                   required=required>
             <br>
         </div>
         <input type="submit" class="btn btn-primary">

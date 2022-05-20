@@ -4,9 +4,11 @@ namespace App\Controller;
 
 use App\Entity\Hotel;
 use App\Repository\HotelRepository;
+use App\service\HotelService;
 use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\ORM\OptimisticLockException;
 use Doctrine\ORM\ORMException;
+use Exception;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -87,5 +89,20 @@ class HotelController extends AbstractController
     {
         $repository->remove($hotel);
         return $this->redirectToRoute("app_hotels");
+    }
+
+    /**
+     * @throws Exception
+     */
+    #[Route('/hotel/search/', name: 'app_hotel_search')]
+    public function search(Request $request, HotelService $hotelService): Response
+    {
+        $hotels = [];
+        if ($request->isMethod('POST')) {
+            $hotels = $hotelService->searchByName($request->get('name'));
+        }
+        return $this->render('hotel/search.html.twig', [
+            'hotels' => $hotels,
+        ]);
     }
 }

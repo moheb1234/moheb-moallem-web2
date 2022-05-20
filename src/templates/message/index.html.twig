@@ -8,6 +8,9 @@
         crossorigin="anonymous"></script>
 
 {% block body %}
+    <div class="bg-dark text-white p-2">
+        {{ knp_menu_render('main') }}
+    </div>
     {% if msg is empty %}
         <h2>No messages founded 404</h2>
     {% else %}

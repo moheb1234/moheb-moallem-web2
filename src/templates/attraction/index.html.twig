@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 
 <title>Hello AttractionController!</title>
-
 {% block body %}
+    <div class="bg-dark text-white p-2">
+        {{ knp_menu_render('main') }}
+    </div>
     {% if attractions is empty %}
         <h2>No Attraction founded 404</h2>
     {% else %}

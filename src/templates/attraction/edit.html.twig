@@ -3,15 +3,18 @@
 <title>Hello AttractionController!</title>
 
 {% block body %}
+    <div class="bg-dark text-white p-2">
+        {{ knp_menu_render('main') }}
+    </div>
     <form style="margin-left: 20px" method="post">
-        <input type="text" name="name" value="{{ atr.name }}" required = required>
+        <input type="text" name="name" value="{{ atr.name }}" required=required>
         <br><br>
-        <input type="text" name="short_description" value="{{ atr.shortDescription }}" required = required>
+        <input type="text" name="short_description" value="{{ atr.shortDescription }}" required=required>
         <br><br>
-        <input type="text" name="full_description" value="{{ atr.fullDescription }}" required =required>
+        <input type="text" name="full_description" value="{{ atr.fullDescription }}" required=required>
         <br><br>
-        <input type="text" name="score" value="{{ atr.score }}" required = required>
+        <input type="text" name="score" value="{{ atr.score }}" required=required>
         <br><br>
-        <input type="submit" >
+        <input type="submit">
     </form>
 {% endblock %}

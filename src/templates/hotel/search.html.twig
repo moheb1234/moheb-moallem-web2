@@ -9,8 +9,15 @@
 
 {% block body %}
     <div class="bg-dark text-white p-2">
-    {{ knp_menu_render('main') }}
+        {{ knp_menu_render('main') }}
     </div>
+    <div class="p-1 ">
+        <form method="post" action="{{ path('app_hotel_search') }}">
+            <input class="border border-2" type="search" placeholder="Search By Name" name="name">
+            <button type="submit"> search </button>
+        </form>
+    </div>
+    <br>
     {% if hotels is empty %}
         <h2>No hotel founded 404</h2>
     {% else %}

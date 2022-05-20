@@ -8,6 +8,9 @@
         crossorigin="anonymous"></script>
 
 {% block body %}
+    <div class="bg-dark text-white p-2">
+        {{ knp_menu_render('main') }}
+    </div>
     <div class="mt-4 container">
         <form class="ms-3" method="post">
             <label for="text" class="h4">Message:</label>
